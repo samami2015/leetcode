@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class LC0105 {
     class TreeNode {
         int val;
@@ -7,54 +9,112 @@ public class LC0105 {
         TreeNode() {
         }
 
-        TreeNode(int val) {
-            this.val = val;
+        TreeNode(int x) {
+            this.val = x;
         }
 
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
+        TreeNode(int x, TreeNode left, TreeNode right) {
+            this.val = x;
             this.left = left;
             this.right = right;
         }
     }
-    public static void main(String[] args) {
-        int[] preorder = {3,9,20,15,7};
-        int[] inorder = {9,3,15,20,7};
-        LC0105 solution = new LC0105();
-        TreeNode ans = solution.buildTree(preorder, inorder);
-        System.out.println(ans.val);
-    }
 
-    /* 主函数 */
-    TreeNode buildTree(int[] preorder, int[] inorder) {
-        return build(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
-    }
+/*    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        return buildTreeHelper(preorder, 0, preorder.length, inorder, 0, inorder.length);
+    }*/
 
-    /*
-      若前序遍历数组为 preorder[preStart..preEnd]，
-      后续遍历数组为 inorder[inStart..inEnd]，
-      构造二叉树，返回该二叉树的根节点
-   */
-    TreeNode build(int[] preorder, int preStart, int preEnd, int[] inorder, int inStart, int inEnd) {
-        if (preStart > preEnd) {
+/*    private TreeNode buildTreeHelper(int[] preorder, int p_start, int p_end, int[] inorder, int i_start, int i_end) {
+        if (p_start == p_end) {
             return null;
         }
-
-        // root 节点对应的值就是前序遍历数组的第一个元素
-        int rootVal = preorder[preStart];
-        // rootVal 在中序遍历数组中的索引
-        int index = 0;
-        for (int i = inStart; i <= inEnd; i++) {
-            if (inorder[i] == rootVal) {
-                index = i;
+        int root_val = preorder[p_start];
+        TreeNode root = new TreeNode(root_val);
+        int i_root_index = 0;
+        for (int i = i_start; i < i_end; i++) {
+            if (root_val == inorder[i]) {
+                i_root_index = i;
                 break;
             }
         }
-        int leftsize = index - inStart;
-        TreeNode root = new TreeNode(rootVal);
-        // 递归构造左右子树
-        root.left = build(preorder, preStart + 1, preStart + leftsize, inorder, inStart, index - 1);
-        root.right = build(preorder, preStart + leftsize + 1, preEnd, inorder, index + 1, inEnd);
+        int leftNum = i_root_index - i_start;
+        root.left = buildTreeHelper(preorder, p_start + 1, p_start + leftNum + 1, inorder, i_start, i_root_index);
+        root.right = buildTreeHelper(preorder, p_start + leftNum + 1, p_end, inorder, i_root_index + 1, i_end);
+        return root;
+    }*/
+
+/*    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0; i < inorder.length; i++) {
+            map.put(inorder[i], i);
+        }
+        return buildTreeHelper(preorder, 0, preorder.length, inorder, 0, inorder.length, map);
+    }
+
+    private TreeNode buildTreeHelper(int[] preorder, int p_start, int p_end, int[] inorder, int i_start, int i_end, HashMap<Integer, Integer> map) {
+        if (p_start == p_end) {
+            return null;
+        }
+        int root_val = preorder[p_start];
+        TreeNode root = new TreeNode(root_val);
+        int i_root_index = map.get(root_val);
+        int leftNum = i_root_index - i_start;
+        root.left = buildTreeHelper(preorder, p_start + 1, p_start + leftNum + 1, inorder, i_start, i_root_index,map);
+        root.right = buildTreeHelper(preorder, p_start + leftNum + 1, p_end, inorder, i_root_index + 1, i_end,map);
+        return root;
+    }*/
+
+/*    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        return buildTreeHelper(preorder, inorder, (long) Integer.MAX_VALUE + 1);
+    }
+
+    int pre = 0;
+    int in = 0;
+
+    private TreeNode buildTreeHelper(int[] preorder, int[] inorder, long stop) {
+        if (pre == preorder.length) {
+            return null;
+        }
+        if (inorder[in] == stop) {
+            in++;
+            return null;
+        }
+        int root_val = preorder[pre++];
+        TreeNode root = new TreeNode(root_val);
+        root.left = buildTreeHelper(preorder, inorder, root_val);
+        root.right = buildTreeHelper(preorder, inorder, stop);
+        return root;
+    }*/
+
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        if (preorder.length == 0) {
+            return null;
+        }
+        Stack<TreeNode> roots = new Stack<TreeNode>();
+        int pre = 0;
+        int in = 0;
+        TreeNode curRoot = new TreeNode(preorder[pre]);
+        TreeNode root = curRoot;
+        roots.push(root);
+        pre++;
+        while (pre < preorder.length) {
+            if (curRoot.val == inorder[in]) {
+                while (!roots.isEmpty() && roots.peek().val == inorder[in]) {
+                    curRoot = roots.peek();
+                    roots.pop();
+                    in++;
+                }
+                curRoot.right = new TreeNode(preorder[pre]);
+                curRoot = curRoot.right;
+                roots.push(curRoot);
+                pre++;
+            } else {
+                curRoot.left = new TreeNode(preorder[pre]);
+                curRoot = curRoot.left;
+                roots.push(curRoot);
+                pre++;
+            }
+        }
         return root;
     }
 }
