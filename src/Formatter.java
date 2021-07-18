@@ -20,24 +20,19 @@ public class Formatter {
         }
     }
 
-    public TreeNode invertTree(TreeNode root) {
+    long pre = Long.MIN_VALUE;
+
+    public boolean isValidBST(TreeNode root) {
         if (root == null) {
-            return null;
+            return true;
         }
-        LinkedList<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
-            TreeNode tmp = queue.poll();
-            TreeNode left = tmp.left;
-            tmp.left = tmp.right;
-            tmp.right = left;
-            if (tmp.left != null) {
-                queue.add(tmp.left);
-            }
-            if (tmp.right != null) {
-                queue.add(tmp.right);
-            }
+        if (!isValidBST(root.left)) {
+            return false;
         }
-        return root;
+        if (root.val <= pre) {
+            return false;
+        }
+        pre = root.val;
+        return isValidBST(root.right);
     }
 }
