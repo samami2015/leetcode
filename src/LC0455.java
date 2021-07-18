@@ -1,8 +1,6 @@
-package com.od.self;
-
 import java.util.Arrays;
 
-public class LC0455_001 {
+public class LC0455 {
     public int findContentChildren(int[] grid, int[] size) {
         if (grid == null || size == null) return 0;
         Arrays.sort(grid);
@@ -18,7 +16,7 @@ public class LC0455_001 {
     }
 
     public static void main(String[] args) {
-        LC0455_001 solution = new LC0455_001();
+        LC0455 solution = new LC0455();
         int[] grid = {1,2,3};
         int[] size = {1,1};
         int contentChildren = solution.findContentChildren(grid, size);

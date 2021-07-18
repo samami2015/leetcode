@@ -1,5 +1,12 @@
 public class LC0206 {
+    static class ListNode {
+        int val;
+        ListNode next;
 
+        ListNode(int x) {
+            val = x;
+        }
+    }
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode curr = head;

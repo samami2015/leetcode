@@ -1,6 +1,10 @@
-package com.od.self;
-
-public class LC0235_001 {
+public class LC0235 {
+    public static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) { val = x; }
+    }
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(root.right == p && root.left == q){
             return root;
@@ -12,7 +16,7 @@ public class LC0235_001 {
     }
 
     public static void main(String[] args) {
-        LC0235_001 solution = new LC0235_001();
+        LC0235 solution = new LC0235();
         TreeNode root = new TreeNode(6);
         TreeNode node1 = new TreeNode(2);
         TreeNode node2 = new TreeNode(8);

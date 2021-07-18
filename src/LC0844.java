@@ -1,6 +1,20 @@
-package com.od.self;
+public class LC0844 {
+/*    public boolean backspaceCompare(String S, String T) {
+        return build(S).equals(build(T));
+    }
 
-public class LC0844_002 {
+    private String build(String s) {
+        Stack<Character> ans = new Stack<Character>();
+        for (char c : s.toCharArray()) {
+            if (c != '#') {
+                ans.push(c);
+            } else if (!ans.empty()) {
+                ans.pop();
+            }
+        }
+        return String.valueOf(ans);
+    }*/
+
     public boolean backspaceCompare(String S, String T) {
         int i = S.length() - 1, j = T.length() - 1;
         int skipS = 0, skipT = 0;
@@ -37,8 +51,9 @@ public class LC0844_002 {
         }
         return true;
     }
+
     public static void main(String[] args) {
-        LC0844_002 solution = new LC0844_002();
+        LC0844 solution = new LC0844();
         System.out.println(solution.backspaceCompare("ab#c", "ad#c"));
     }
 }

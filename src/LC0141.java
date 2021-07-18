@@ -1,4 +1,12 @@
 public class LC0141 {
+    static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int x) {
+            val = x;
+        }
+    }
     public boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {
             return false;
