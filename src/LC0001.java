@@ -2,7 +2,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LeetCode_0001 {
+public class LC0001 {
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
@@ -16,7 +16,7 @@ public class LeetCode_0001 {
     }
 
     public static void main(String[] args) {
-        LeetCode_0001 solution = new LeetCode_0001();
+        LC0001 solution = new LC0001();
         int[] nums = new int[]{2, 7, 11, 15};
         int target = 9;
         int[] ret = solution.twoSum(nums, target);
