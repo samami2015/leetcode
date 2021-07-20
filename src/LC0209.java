@@ -19,30 +19,30 @@ public class LC0209 {
 
     public int minSubArrayLen(int s, int[] nums) {
         int n = nums.length;
-        if(n==0){
+        if (n == 0) {
             return 0;
         }
         int left = 0;
         int right = 0;
         int sum = 0;
         int min = Integer.MAX_VALUE;
-        while (right < n){
+        while (right < n) {
             sum += nums[right];
             right++;
-            while (sum >= s){
-                min = Math.min(min,right-left);
+            while (sum >= s) {
+                min = Math.min(min, right - left);
                 sum -= nums[left];
                 left++;
             }
         }
-        return min == Integer.MAX_VALUE?0:min;
+        return min == Integer.MAX_VALUE ? 0 : min;
     }
 
     public static void main(String[] args) {
         LC0209 solution = new LC0209();
         int s = 7;
-        int[] nums = {2,3,1,2,4,3};
-        int ret = solution.minSubArrayLen(s,nums);
+        int[] nums = {2, 3, 1, 2, 4, 3};
+        int ret = solution.minSubArrayLen(s, nums);
         System.out.println(ret);
     }
 }

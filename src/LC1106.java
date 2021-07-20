@@ -8,6 +8,7 @@ public class LC1106 {
         String expression = "&(t,f)";
         solution.parseBoolExpr(expression);
     }
+
     public boolean parseBoolExpr(String expression) {
         Stack<Character> worker = new Stack<>();
         //expression = "!(f)"

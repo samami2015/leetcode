@@ -19,7 +19,7 @@ public class LC0242 {
     public static void main(String[] args) {
         LC0242 solution = new LC0242();
         String s = "anagram", t = "nagaram";
-        boolean ret  = solution.isAnagram(s,t);
+        boolean ret = solution.isAnagram(s, t);
         System.out.println(ret);
     }
 }

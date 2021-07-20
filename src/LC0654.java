@@ -17,9 +17,10 @@ public class LC0654 {
             this.right = right;
         }
     }
+
     public static void main(String[] args) {
         LC0654 solution = new LC0654();
-        int[] nums = {3,2,1,6,0,5};
+        int[] nums = {3, 2, 1, 6, 0, 5};
         TreeNode ans = solution.constructMaximumBinaryTree(nums);
         System.out.println(ans.val);
     }

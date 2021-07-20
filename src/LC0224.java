@@ -32,10 +32,10 @@ public class LC0224 {
                 num = num * 10 + (c - '0');
             }
             //遇到左括号开始递归计算 num
-            if(c=='(') {
+            if (c == '(') {
             }
             // 如果不是数字，就是遇到了下一个符号，之前的数字和符号就要存进栈中
-            if ((!Character.isDigit(c) && c!=' ')|| i == s.length() - 1) {
+            if ((!Character.isDigit(c) && c != ' ') || i == s.length() - 1) {
                 int pre;
                 switch (sign) {
                     case '+':
@@ -47,12 +47,12 @@ public class LC0224 {
                     case '*':
                         pre = stk.peek();
                         stk.pop();
-                        stk.push(pre*num);
+                        stk.push(pre * num);
                         break;
                     case '/':
                         pre = stk.peek();
                         stk.pop();
-                        stk.push(pre/num);
+                        stk.push(pre / num);
                         break;
                 }
                 // 更新符号为当前符号，数字清零
@@ -62,7 +62,7 @@ public class LC0224 {
         }
         // 将栈中所有结果求和就是答案
         int res = 0;
-        while (!stk.isEmpty()){
+        while (!stk.isEmpty()) {
             res += stk.peek();
             stk.pop();
         }

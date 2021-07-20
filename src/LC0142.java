@@ -10,6 +10,7 @@ public class LC0142 {
             val = x;
         }
     }
+
     private ListNode getIntersect(ListNode head) {
         ListNode tortoise = head;
         ListNode hare = head;
@@ -61,11 +62,11 @@ public class LC0142 {
         int pos = 1;
         ListNode node = solution.detectCycle(listNode1);
         List nodes = new ArrayList<ListNode>();
-        nodes.add(0,listNode1);
-        nodes.add(1,listNode2);
-        nodes.add(2,listNode3);
-        nodes.add(3,listNode4);
-        ListNode temp = (ListNode)nodes.get(pos);
-        System.out.println(node.val==temp.val?"tail connects to node index "+pos:"no cycle");
+        nodes.add(0, listNode1);
+        nodes.add(1, listNode2);
+        nodes.add(2, listNode3);
+        nodes.add(3, listNode4);
+        ListNode temp = (ListNode) nodes.get(pos);
+        System.out.println(node.val == temp.val ? "tail connects to node index " + pos : "no cycle");
     }
 }

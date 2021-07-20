@@ -7,6 +7,7 @@ public class LC0206 {
             val = x;
         }
     }
+
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode curr = head;

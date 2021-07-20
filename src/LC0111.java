@@ -6,7 +6,10 @@ public class LC0111 {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode(int x) { val = x; }
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
     
  /*   public int minDepth(TreeNode root) {
@@ -72,5 +75,5 @@ public class LC0111 {
             }
         }
         return 0;
-    }    
+    }
 }

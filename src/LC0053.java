@@ -1,10 +1,11 @@
 public class LC0053 {
     public static void main(String[] args) {
         LC0053 solution = new LC0053();
-        int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
+        int[] nums = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
         int ans = solution.maxSubArray(nums);
         System.out.println(ans);
     }
+
     public int maxSubArray(int[] nums) {
         int len = nums.length, max, dp;
         if (len == 0) return 0;

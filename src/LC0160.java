@@ -15,6 +15,7 @@ public class LC0160 {
             this.next = next;
         }
     }
+
     public static void main(String[] args) {
         LC0160 solution = new LC0160();
         //listA = [4,1,8,4,5], listB = [5,0,1,8,4,5]
@@ -43,18 +44,19 @@ public class LC0160 {
         nodeE.next = nodeF;
         nodeF.next = null;
 
-        ListNode ans = solution.getIntersectionNode(node1,nodeA);
+        ListNode ans = solution.getIntersectionNode(node1, nodeA);
         System.out.println(ans);
 
     }
-/*    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        ListNode A = headA, B = headB;
-        while (A != B) {
-            A = A != null ? A.next : headB;
-            B = B != null ? B.next : headA;
-        }
-        return A;
-    }*/
+
+    /*    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+            ListNode A = headA, B = headB;
+            while (A != B) {
+                A = A != null ? A.next : headB;
+                B = B != null ? B.next : headA;
+            }
+            return A;
+        }*/
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode A = headA, B = headB;
         while (A != B) {

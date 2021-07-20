@@ -3,13 +3,17 @@ public class LC0235 {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode(int x) { val = x; }
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
+
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        if(root.right == p && root.left == q){
+        if (root.right == p && root.left == q) {
             return root;
         }
-        if((root == p && root.right == q )|| (root.left == p || root == q)){
+        if ((root == p && root.right == q) || (root.left == p || root == q)) {
             return root;
         }
         return null;
@@ -33,6 +37,6 @@ public class LC0235 {
 
         node2.left = new TreeNode(7);
         node2.right = new TreeNode(9);
-        System.out.println(solution.lowestCommonAncestor(root,node1,node2).val);
+        System.out.println(solution.lowestCommonAncestor(root, node1, node2).val);
     }
 }

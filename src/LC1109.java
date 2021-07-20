@@ -3,11 +3,12 @@ import java.util.Arrays;
 public class LC1109 {
     public static void main(String[] args) {
         LC1109 solution = new LC1109();
-        int[][] bookings = {{1,2,10},{2,3,20},{2,5,25}};
+        int[][] bookings = {{1, 2, 10}, {2, 3, 20}, {2, 5, 25}};
         int n = 5;
-        int[] ans = solution.corpFlightBookings(bookings,n);
+        int[] ans = solution.corpFlightBookings(bookings, n);
         System.out.println(Arrays.toString(ans));
     }
+
     public int[] corpFlightBookings(int[][] bookings, int n) {
         int[] counter = new int[n];
         for (int[] booking : bookings) {

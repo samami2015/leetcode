@@ -7,7 +7,7 @@ public class LC0455 {
         Arrays.sort(size);
         int gi = 0, si = 0;
         while (gi < grid.length && si < size.length) {
-            if(grid[gi]<=size[si]){
+            if (grid[gi] <= size[si]) {
                 gi++;
             }
             si++;
@@ -17,8 +17,8 @@ public class LC0455 {
 
     public static void main(String[] args) {
         LC0455 solution = new LC0455();
-        int[] grid = {1,2,3};
-        int[] size = {1,1};
+        int[] grid = {1, 2, 3};
+        int[] size = {1, 1};
         int contentChildren = solution.findContentChildren(grid, size);
         System.out.println(contentChildren);
     }

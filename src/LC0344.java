@@ -1,7 +1,7 @@
 public class LC0344 {
     public static void main(String[] args) {
         LC0344 solution = new LC0344();
-        char[] s = {'h','e','l','l','o'};
+        char[] s = {'h', 'e', 'l', 'l', 'o'};
         solution.reverseString(s);
         System.out.println(s);
     }

@@ -42,7 +42,7 @@ public class LC0860 {
         //int[] bills = {5,5,5,10,20};
         //int[] bills = {5,5,10};
         //int[] bills = {10,10};
-        int[] bills = {5,5,10,10,20};
+        int[] bills = {5, 5, 10, 10, 20};
         boolean b = solution.lemonadeChange(bills);
         System.out.println(b);
     }

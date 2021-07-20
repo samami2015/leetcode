@@ -43,10 +43,10 @@ public class LC0266 {
             TreeNode left = tmp.left;
             tmp.left = tmp.right;
             tmp.right = left;
-            if(tmp.left!=null){
+            if (tmp.left != null) {
                 queue.add(tmp.left);
             }
-            if(tmp.right!=null){
+            if (tmp.right != null) {
                 queue.add(tmp.right);
             }
         }

@@ -17,6 +17,7 @@ public class LC1137 {
             return nums[k];
         }
     }
+
     //输入：n = 25
     //输出：1389537
     public static void main(String[] args) {

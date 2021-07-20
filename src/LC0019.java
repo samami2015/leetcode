@@ -18,9 +18,10 @@ public class LC0019 {
             this.next = next;
         }
     }
+
     public static void main(String[] args) {
         LC0019 solution = new LC0019();
-       ListNode node1 = new ListNode(1);
+        ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(2);
         ListNode node3 = new ListNode(3);
         ListNode node4 = new ListNode(4);
@@ -45,14 +46,14 @@ public class LC0019 {
     }
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode dummy = new ListNode(0,head);
+        ListNode dummy = new ListNode(0, head);
         Deque<ListNode> stack = new LinkedList<ListNode>();
         ListNode cur = dummy;
-        while (cur!=null){
+        while (cur != null) {
             stack.push(cur);
             cur = cur.next;
         }
-        for(int i = 0;i<n;++i){
+        for (int i = 0; i < n; ++i) {
             stack.pop();
         }
         ListNode prev = stack.peek();

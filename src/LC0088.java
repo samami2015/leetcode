@@ -33,7 +33,7 @@ public class LC0088 {
         int[] nums1 = {2, 4, 6, 6, 0, 0, 0};
         int[] nums2 = {3, 5, 7};
         int m = 3, n = 3;
-        solution.merge(nums1,m,nums2,n);
+        solution.merge(nums1, m, nums2, n);
         System.out.println(Arrays.toString(nums1));
     }
 }

@@ -10,6 +10,7 @@ public class LC0032 {
         int ans = solution.longestValidParentheses(s);
         System.out.println(ans);
     }
+
     public int longestValidParentheses(String s) {
         int maxans = 0;
         Deque<Integer> stack = new LinkedList<>();

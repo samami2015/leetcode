@@ -41,13 +41,14 @@ public class LC0844 {
                     break;
                 }
             }
-            if(i>=0 && j>=0 && S.charAt(i)!=T.charAt(j)){
+            if (i >= 0 && j >= 0 && S.charAt(i) != T.charAt(j)) {
                 return false;
             }
-            if((i>=0)!=(j>=0)){
+            if ((i >= 0) != (j >= 0)) {
                 return false;
             }
-            i--;j--;
+            i--;
+            j--;
         }
         return true;
     }

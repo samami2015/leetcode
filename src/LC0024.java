@@ -7,6 +7,7 @@ public class LC0024 {
             val = x;
         }
     }
+
     public ListNode swapPairs(ListNode head) {
         // Dummy node acts as the prevNode for the head node
         // of the list and hence stores pointer to the head node.

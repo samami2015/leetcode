@@ -1,10 +1,11 @@
 public class LC0363 {
     public static void main(String[] args) {
         LC0363 solution = new LC0363();
-        int[][] matrix = {{1,0,1},{0,-2,3}};
-        int ans = solution.maxSumSubmatrix(matrix,2);
+        int[][] matrix = {{1, 0, 1}, {0, -2, 3}};
+        int ans = solution.maxSumSubmatrix(matrix, 2);
         System.out.println(ans);
     }
+
     // 在数组 arr 中，求不超过 k 的最大值
     private int dpmax(int[] arr, int k) {
         int max = Integer.MIN_VALUE;

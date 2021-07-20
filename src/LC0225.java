@@ -3,12 +3,16 @@ import java.util.Queue;
 
 class LC0225 {
 
-    /** Initialize your data structure here. */
+    /**
+     * Initialize your data structure here.
+     */
     public LC0225() {
 
     }
 
-    /** Push element x onto stack. */
+    /**
+     * Push element x onto stack.
+     */
     private Queue<Integer> q1 = new LinkedList<>();
     private Queue<Integer> q2 = new LinkedList<>();
     private int top;
@@ -19,7 +23,9 @@ class LC0225 {
         top = x;
     }
 
-    /** Removes the element on top of the stack and returns that element. */
+    /**
+     * Removes the element on top of the stack and returns that element.
+     */
     // Removes the element on top of the stack.
     public int pop() {
         while (q1.size() > 1) {
@@ -32,12 +38,17 @@ class LC0225 {
         q2 = temp;
         return ret;
     }
-    /** Get the top element. */
+
+    /**
+     * Get the top element.
+     */
     public int top() {
         return top;
     }
 
-    /** Returns whether the stack is empty. */
+    /**
+     * Returns whether the stack is empty.
+     */
 // Returns whether the stack is empty.
     public boolean empty() {
         return q1.isEmpty();

@@ -3,6 +3,7 @@ import java.util.List;
 public class LC0385 {
     class NestedInteger {
         private int value;
+
         // Constructor initializes an empty nested list.
         public NestedInteger() {
         }
@@ -38,12 +39,14 @@ public class LC0385 {
             return null;
         }
     }
+
     public static void main(String[] args) {
         LC0385 solution = new LC0385();
         String s = "324";
         NestedInteger ans = solution.deserialize(s);
         System.out.println(ans.getInteger());
     }
+
     //递归函数通过字符数组和cur下标确定要处理的位置
     char[] chars;
     int cur = 0;
