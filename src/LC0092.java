@@ -50,7 +50,6 @@ public class LC0092 {
         }
         // 以 head.next 为起点，需要反转前 n - 1 个节点
         ListNode last = reverseN(head.next, n - 1);
-
         head.next.next = head;
         // 让反转之后的 head 节点和后面的节点连起来
         head.next = successor;
